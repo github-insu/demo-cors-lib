@@ -1,0 +1,2 @@
+app.cors:
+  max-age: 3_600
