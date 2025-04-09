@@ -1,2 +1,21 @@
-app.cors:
-  max-age: 3_600
+app.cors.endpoints:
+  - path: "/a"
+    allowed:
+      headers: "*"
+      methods: "*"
+      origins:
+        - https://blolet.com
+      credentials: true
+    exposed:
+      headers: "*"
+    max-age: 3_600
+  - path: "/b"
+    allowed:
+      headers: "*"
+      methods: "*"
+      origins:
+        - https://blolet.com
+      credentials: true
+    exposed:
+      headers: "*"
+  #    max-age: 3_600

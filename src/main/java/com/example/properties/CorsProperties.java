@@ -1,13 +1,16 @@
 package com.example.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 @ConfigurationProperties("app.cors")
 public record CorsProperties(
-        int maxAge
+        @NestedConfigurationProperty
+        MappedCorsProperties[] endpoints
 ) {
     public CorsProperties {
-        System.out.println("------------------------");
-        System.out.println("maxAge = "+maxAge);
+        for (var endpoint : endpoints) {
+            System.out.println(endpoint);
+        }
     }
 }
