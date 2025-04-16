@@ -5,12 +5,9 @@ import com.example.properties.exposed.CorsExposedProperties;
 import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
-@ConfigurationPropertiesBinding
 public record MappedCorsProperties(
         String path,
-        @NestedConfigurationProperty
         CorsAllowedProperties allowed,
-        @NestedConfigurationProperty
         CorsExposedProperties exposed,
         Long maxAge
 ) {
